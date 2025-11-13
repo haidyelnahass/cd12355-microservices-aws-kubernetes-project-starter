@@ -1,4 +1,4 @@
-FROM ghcr.io/library/python:3.11-slim
+FROM public.ecr.aws/sam/build-python3.11:latest
 
 WORKDIR /app
 
