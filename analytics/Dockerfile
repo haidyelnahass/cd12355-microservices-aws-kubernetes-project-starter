@@ -4,11 +4,11 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN apt update -y && \
-    apt install -y build-essential libpq-dev && \
+RUN yum update -y && \
+    yum install -y gcc gcc-c++ postgresql-devel make && \
     pip install --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt && \
-    apt clean && rm -rf /var/lib/apt/lists/*
+    yum clean all
 
 COPY . .
 
